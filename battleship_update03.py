@@ -25,6 +25,7 @@ init_attackShip_col = random_col(board)
 attackShip_row = [init_attackShip_row, init_attackShip_row + 1]
 attackShip_col = [init_attackShip_col, init_attackShip_col + 1]
 
+#Debugging
 print attackShip_row
 print attackShip_col
 

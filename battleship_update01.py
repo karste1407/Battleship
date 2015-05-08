@@ -37,7 +37,7 @@ for turn in range(6):
         print "You sunk my attack ship!"
         print "YOU WON!"
         break
-    elif attackShip_row.index(guess_row) == True and attackShip_col.index(guess_col) == True:
+    elif attackShip_row.index(guess_row) == attackShip[attackShip_row.index(guess_row)] and attackShip_col.index(guess_col) == attackShip[attackShip_col.index(guess_col)]:
         print "You hit my attack ship!"
         board[guess_row][guess_col] == "H"
     else:

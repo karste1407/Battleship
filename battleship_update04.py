@@ -50,30 +50,29 @@ user_2 = [user_row(), user_col()]
 
 
 #///////////////////////guesswork?//////////////////////////////////////////////////
-print "Player 1 your turn..."
-user1_guess = [user_row(), user_col()]
-
-if user1_guess == user2_ship:
-	board[user1_guess[0]][user1_guess[1]] == "H"
-	print "You won!"
-	print "PLAYER 1 slayed PLAYER 2!"
-else:
-	board[user1_guess[0]][user1_guess[1]] == "M"
-	print "You missed!"
-
-print_board(board)
-
-print "Player 2 your turn..."
-user2_guess = [user_row(), user_col()]
-
-if user2_guess == user1_ship:
-	board[user2_guess[0]][user_guess[1]] == "H"
-	print "You won!"
-	print "PLAYER 2 slayed PLAYER 1!"
-else:
-	board[user2_guess[0]][user_guess[1]] == "M"
-	print "You missed!"
-
+while True:
+	while True:
+		print "Player 1 your turn"
+		user1_guess = [user_row(), user_col()]
+		if user1_guess == user2_ship:
+			board[user1_guess[0]][user1_guess[1]] == "H"
+			print "PLAYER 1 WINS!"
+	break
+		else:
+			board[user1_guess[0]][user1_guess[1]] == "M"
+			print "You missed"
+			break
+	while True:
+		print "Player 2 your turn"
+		user2_guess = [user_row(), user_col()]
+		if user2_guess == user1_ship:
+			board[user2_guess[0]][user2_guess[1]] == "H"
+			print "PLAYER 2 WINS!"
+	break
+		else:
+			board[user2_guess[0]][user2_guess[1]] == "M"
+			print "You missed"
+			break
 
 
 

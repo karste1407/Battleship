@@ -13,16 +13,20 @@ def print_board(board):
 
 #///////////////////////////Getting input//////////////////////////////////////////
 def user_row():
-    get_row  = raw_input("Enter ship row between 1 and 5")
-    if get_row != int:
-        print "You must enter an integer"
-        get_row = raw_input("Enter ship row...")
+	get_row = raw_input("Enter ship row between 1 and 5")
+	if int(get_row) == False:
+		print "You must enter an integer between 1 and 5"
+		get_row = raw_input("Enter ship row...")
+		if int(get_row) == False:
+			sys.exit()
 
 def user_col():
     get_col = raw_input("Enter ship col between 1 and 5")
-    if get_col != int:
-        print "You must enter an integer"
+    if int(get_col) == False:
+        print "You must enter an integer between 1 and 5"
         get_col = raw_input("Enter ship col...")
+        if int(get_col) == False:
+        	sys.exit()
 
 #/////////////////////////Intro//////////////////////////////////////////////////////
 print "Let's play Battleship!"

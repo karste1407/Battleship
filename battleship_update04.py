@@ -63,30 +63,37 @@ user_2 = [user_row(), user_col()]
 
 #///////////////////////guesswork?//////////////////////////////////////////////////
 #Maybe while loops inside while loops is not the best way of running the code over and over until someone sinks the other persons ship
-#What Im expecting is the first inside while loop to break the outer loop if the player hits the other players ship otherwise break itself. Likewise with the second inner loop.
+#What Im expecting is the first inside while loop to raise an error if the player wins (same with second inner-while loop) and then the outer while loop catches that error and then breaks the entire while loop.
 while True:
-	while True:
-		print "Player 1 your turn"
-		user1_guess = [user_row(), user_col()]
-		if user1_guess == user2_ship:
-			board[user1_guess[0]][user1_guess[1]] == "H"
-			print "PLAYER 1 WINS!"
-	break
-		else:
-			board[user1_guess[0]][user1_guess[1]] == "M"
-			print "You missed"
+	try:
+		while True:
+			print "Player 1 your turn"
+			user1_guess = [user_row(), user_col()]
+			if user1_guess == user2_ship:
+				board[user1_guess[0]][user1_guess[1]] == "H"
+			    	print "PLAYER 1 WINS!"
+				raise
+				break
+			else:
+			    board[user1_guess[0]][user1_guess[1]] == "M"
+			    print "You missed"
 			break
-	while True:
-		print "Player 2 your turn"
-		user2_guess = [user_row(), user_col()]
-		if user2_guess == user1_ship:
-			board[user2_guess[0]][user2_guess[1]] == "H"
-			print "PLAYER 2 WINS!"
-	break
-		else:
-			board[user2_guess[0]][user2_guess[1]] == "M"
-			print "You missed"
+			
+		while True:
+		    user2_guess = [user_row(), user_col()]
+			print "Player 2 your turn"
+		    if user2_guess == user1_ship:
+		    	board[user2_guess[0]][user2_guess[1]] == "H"
+		        print "PLAYER 2 WINS!"
+				raise
 			break
+		    else:
+		        board[user2_guess[0]][user2_guess[1]] == "M"
+		        print "You missed"
+			break
+		
+	except:
+		break
 
 
 

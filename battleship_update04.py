@@ -13,21 +13,31 @@ def print_board(board):
 
 #///////////////////////////Getting input//////////////////////////////////////////
 def user_row():
-	get_row = raw_input("Enter ship row between 1 and 5")
-	#Not shure if this is the best way of checking that the input is an int
-	if int(get_row) == False:
+	get_row = raw_input("enter ship row between 1 and 5: ")
+	try:
+		int(get_row)
+	except ValueError:
 		print "You must enter an integer between 1 and 5"
-		get_row = raw_input("Enter ship row...")
-		if int(get_row) == False:
-			sys.exit()
+		get_row = raw_input("Enter ship row: ")
+	try:
+		int(get_row)
+	except ValueError:
+		sys.exit()
+	return int(get_row)
 
 def user_col():
-    get_col = raw_input("Enter ship col between 1 and 5")
-    if int(get_col) == False:
-        print "You must enter an integer between 1 and 5"
-        get_col = raw_input("Enter ship col...")
-        if int(get_col) == False:
-        	sys.exit()
+	get_col = raw_input("enter ship col between 1 and 5: ")
+	try:
+		int(get_col)
+	except ValueError:
+		print "You must enter an integer between 1 and 5"
+		get_col = raw_input("Enter ship col: ")
+	try:
+		int(get_col)
+	except ValueError:
+		sys.exit()
+	return int(get_col)
+
 
 #/////////////////////////Intro//////////////////////////////////////////////////////
 print "Let's play Battleship!"

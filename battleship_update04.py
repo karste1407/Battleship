@@ -12,34 +12,19 @@ def print_board(board):
 
 
 #///////////////////////////Getting input//////////////////////////////////////////
+
 def user_row():
-	get_row = raw_input("enter ship row between 1 and 5: ")
-	try:
-		int(get_row)
-	except ValueError:
-		print "You must enter an integer between 1 and 5"
-		get_row = raw_input("Enter ship row: ")
-	try:
-		int(get_row)
-	except ValueError:
-		sys.exit()
-	return int(get_row)
+    state = False
+    while state = False
+        try:
+            get_row = int(raw_input("enter ship row between 1 and 5: "))
+        except ValueError:
+            print "Invalid input. Try again..."
+        else:
+            state = True
+    return get_row
 
 def user_col():
-	get_col = raw_input("enter ship col between 1 and 5: ")
-	try:
-		int(get_col)
-	except ValueError:
-		print "You must enter an integer between 1 and 5"
-		get_col = raw_input("Enter ship col: ")
-	try:
-		int(get_col)
-	except ValueError:
-		sys.exit()
-	return int(get_col)
-
-#could be a better way of doing it
-"""def user_col():
     state = False
     while state = False
         try:
@@ -48,22 +33,20 @@ def user_col():
             print "Invalid input. Try again..."
         else:
             state = True
-    return get_col"""
-
-
+    return get_col
+    
 #/////////////////////////Intro//////////////////////////////////////////////////////
-print "Let's play Battleship!"
-print "This is your ocean"
-print_board(board)
 
-
-#////////////////////////Placing ships//////////////////////////////////////////////
 print "Player 1 your up!"
 print "Player 2 look away!"
 print "Place your ship..."
 
 #Not shure if this will call the two functions chronologic and store them as index 0 and 1 in my array. That is what I want it to do
 user1_ship = [user_row(), user_col()]
+
+if (user1_ship[0] < 1 or user1_ship[0] > 5) or (user1_ship[1] < 1 or user1_ship[1] > 5):
+    print "Your trying to place your ship outside of the ocean!!!"
+    user1_ship = [user_row(), user_col()]
 
 print_board(board)
 print "Player 2 your up!"
@@ -72,6 +55,9 @@ print "Place your ship..."
 
 user_2 = [user_row(), user_col()]
 
+if (user2_ship[0] < 1 or user2_ship[0] > 5) or (user2_ship[1] < 1 or user2_ship[1] > 5):
+    print "Your trying to place your ship outside of the ocean!!!"
+    user2_ship = [user_row(), user_col()]
 
 #///////////////////////guesswork?//////////////////////////////////////////////////
 #Maybe while loops inside while loops is not the best way of running the code over and over until someone sinks the other persons ship

@@ -17,18 +17,23 @@ def user_row():
     state = False
     while state == False:
         try:
-            get_row = int(raw_input("enter ship row between 1 and 5: "))
+			get_row = int(raw_input("enter ship row between 1 and 5: "))
+			if (get_row == 0) or (get_row > 5):
+				raise ValueError
         except ValueError:
             print "Invalid input. Try again..."
         else:
             state = True
     return int(get_row)
 
+
 def user_col():
     state = False
     while state == False:
         try:
-            get_col = int(raw_input("enter ship col between 1 and 5: "))
+			get_col = int(raw_input("enter ship col between 1 and 5: "))
+			if (get_col == 0) or (get_col > 5):
+				raise ValueError
         except ValueError:
             print "Invalid input. Try again..."
         else:
@@ -45,11 +50,6 @@ raw_input("press enter to proceed...")
 
 #Not shure if this will call the two functions chronologic and store them as index 0 and 1 in my array. That is what I want it to do
 user1_ship = [user_row(), user_col()]
-
-if (user1_ship[0] < 1 or user1_ship[0] > 5) or (user1_ship[1] < 1 or user1_ship[1] > 5):
-    print "Your trying to place your ship outside of the ocean!!!"
-    user1_ship = [user_row(), user_col()]
-
 
 print "////////////////////////////////////////////////////////"
 print "////////////////////////////////////////////////////////"
@@ -75,11 +75,6 @@ raw_input("press enter to proceed...")
 
 
 user2_ship = [user_row(), user_col()]
-
-if (user2_ship[0] < 1 or user2_ship[0] > 5) or (user2_ship[1] < 1 or user2_ship[1] > 5):
-    print "Your trying to place your ship outside of the ocean!!!"
-    user2_ship = [user_row(), user_col()]
-
 
 print "////////////////////////////////////////////////////////"
 print "////////////////////////////////////////////////////////"
@@ -129,5 +124,3 @@ while True:
             break
     except:
         break
-
-

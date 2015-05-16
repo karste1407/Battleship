@@ -17,9 +17,9 @@ def user_row():
     state = False
     while state == False:
         try:
-			get_row = int(raw_input("enter ship row between 1 and 5: "))
-			if (get_row == 0) or (get_row > 5):
-				raise ValueError
+		get_row = int(raw_input("enter ship row between 1 and 5: "))
+		if (get_row == 0) or (get_row > 5):
+			raise ValueError
         except ValueError:
             print "Invalid input. Try again..."
         else:
@@ -31,9 +31,9 @@ def user_col():
     state = False
     while state == False:
         try:
-			get_col = int(raw_input("enter ship col between 1 and 5: "))
-			if (get_col == 0) or (get_col > 5):
-				raise ValueError
+		get_col = int(raw_input("enter ship col between 1 and 5: "))
+		if (get_col == 0) or (get_col > 5):
+			raise ValueError
         except ValueError:
             print "Invalid input. Try again..."
         else:

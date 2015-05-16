@@ -47,6 +47,9 @@ print "Place your ship..."
 print ""
 print "PLAYER 2 LOOK AWAY!"
 raw_input("press enter to proceed...")
+print ""
+print print_board(board)
+print ""
 
 #Not shure if this will call the two functions chronologic and store them as index 0 and 1 in my array. That is what I want it to do
 user1_ship = [user_row(), user_col()]
@@ -72,7 +75,9 @@ print "Place your ship..."
 print ""
 print "PLAYER 1 LOOK AWAY!"
 raw_input("press enter to proceed...")
-
+print ""
+print print_board(board)
+print ""
 
 user2_ship = [user_row(), user_col()]
 
@@ -97,30 +102,34 @@ print "////////////////////////////////////////////////////////"
 #What Im expecting is the first inside while loop to raise an error if the player wins (same with second inner-while loop) and then the outer while loop catches that error and then breaks the entire while loop.
 while True:
     try:
-        while True:
-            print "Player 1 your turn"
-            user1_guess = [user_row(), user_col()]
-            if user1_guess == user2_ship:
-                board[user1_guess[0]][user1_guess[1]] == "H"
-                print "PLAYER 1 WINS!"
-                raise
-                break
-            else:
-                board[user1_guess[0]][user1_guess[1]] == "M"
-                print "You missed"
-            break
+        while True:	
+		print "Player 1 your turn"
+		user1_guess = [user_row(), user_col()]
+		if user1_guess == user2_ship:	
+			board[user1_guess[0]][user1_guess[1]] = "H" 
+			print print_board(board)
+			print "PLAYER 1 WINS!"
+			raise 
+			break
+		else:
+			board[user1_guess[0]][user1_guess[1]] = "M"
+			print print_board(board)
+			print "You missed"
+			break
 
         while True:
-            user2_guess = [user_row(), user_col()]
-            print "Player 2 your turn"
-            if user2_guess == user1_ship:
-                board[user2_guess[0]][user2_guess[1]] == "H"
-                print "PLAYER 2 WINS!"
-                raise
-            	break
-            else:
-                board[user2_guess[0]][user2_guess[1]] == "M"
-                print "You missed"
-            break
+		user2_guess = [user_row(), user_col()]
+		print "Player 2 your turn"
+		if user2_guess == user1_ship:
+			board[user2_guess[0]][user2_guess[1]] = "H"
+			print print_board(board)
+			print "PLAYER 2 WINS!"
+			raise
+			break
+		else:
+			board[user2_guess[0]][user2_guess[1]] = "M"
+			print print_board(board)
+			print "You missed"
+			break
     except:
         break

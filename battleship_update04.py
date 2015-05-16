@@ -15,7 +15,7 @@ def print_board(board):
 
 def user_row():
     state = False
-    while state = False
+    while state == False
         try:
             get_row = int(raw_input("enter ship row between 1 and 5: "))
         except ValueError:
@@ -26,7 +26,7 @@ def user_row():
 
 def user_col():
     state = False
-    while state = False
+    while state == False
         try:
             get_col = int(raw_input("enter ship col between 1 and 5: "))
         except ValueError:

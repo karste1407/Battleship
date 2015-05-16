@@ -38,6 +38,18 @@ def user_col():
 		sys.exit()
 	return int(get_col)
 
+#could be a better way of doing it
+"""def user_col():
+    state = False
+    while state = False
+        try:
+            get_col = int(raw_input("enter ship col between 1 and 5: "))
+        except ValueError:
+            print "Invalid input. Try again..."
+        else:
+            state = True
+    return get_col"""
+
 
 #/////////////////////////Intro//////////////////////////////////////////////////////
 print "Let's play Battleship!"
